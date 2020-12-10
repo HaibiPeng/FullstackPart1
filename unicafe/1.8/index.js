@@ -8,8 +8,6 @@ const Header = (props) => {
     </div>
   )
 }
-
-const Display = props => <div>{props.text} {props.value}</div>
   
 const Button = (props) => (
   <button onClick={props.handleClick}>
@@ -21,6 +19,9 @@ const Statistics = (props) => {
   const total = props.value.Good + props.value.Neutral + props.value.Bad;
   return (
     <div>
+    <div>good {props.value.Good}</div>
+    <div>neutral {props.value.Neutral}</div>
+    <div>bad {props.value.Bad}</div>
     <div>all {props.value.Good + props.value.Neutral + props.value.Bad}</div>
     <div>average {(props.value.Good-props.value.Bad)/total}</div>
     <div>positive {props.value.Good*100/total + ' %'}</div>
@@ -59,9 +60,6 @@ const App = () => {
       <Button handleClick={() => setToNeutral(neutral + 1)} text="neutral" />
       <Button handleClick={() => setToBad(bad + 1)} text="bad" />
       <Header header={"statistics"} />
-      <Display text={"good"} value={value.Good} />
-      <Display text={"neutral"} value={value.Neutral} />
-      <Display text={"bad"} value={value.Bad} />
       <Statistics value={value} />
     </div>
   )
