@@ -32,7 +32,7 @@ const DisplayPositive = (props) => {
   const total = props.value.Good + props.value.Neutral + props.value.Bad;
   return (
     <div>
-      {props.text} {props.value.Good*100/total+'%'}
+      {props.text} {props.value.Good*100/total + ' %'}
     </div>
   )
 }
